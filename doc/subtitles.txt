@@ -1,0 +1,55 @@
+==============================================================================
+CONTENTS                                        *subtitles*   *subtitles-contents*
+
+    Installation................................: |subtitles-installation|
+    Usage.......................................: |subtitles-usage|
+    Settings....................................: |subtitles-settings|
+    Internals...................................: |subtitles-internals|
+    Issues......................................: |subtitles-issues|
+
+
+==============================================================================
+INSTALLATION                                            *subtitles-installation*
+
+There are several ways to install the plugin. The recommended one is by using
+Tim Pope's pathogen (http://www.vim.org/scripts/script.php?script_id=2332). In
+that case, you can clone the plugin's git repository like so:
+>
+    git clone git://github.com/AndrewRadev/subtitles.vim.git ~/.vim/bundle/subtitles
+<
+If your vim configuration is under git version control, you could also set up
+the repository as a submodule, which would allow you to update more easily.
+The command is (provided you're in ~/.vim):
+>
+    git submodule add git://github.com/AndrewRadev/subtitles.vim.git bundle/subtitles
+<
+
+Another way is to simply copy all the essential directories inside the ~/.vim
+directory: TODO list of directories
+
+
+==============================================================================
+USAGE                                                          *subtitles-usage*
+
+TODO
+
+
+==============================================================================
+SETTINGS                                                    *subtitles-settings*
+
+TODO
+
+
+==============================================================================
+INTERNALS                                                  *subtitles-internals*
+
+TODO
+
+==============================================================================
+ISSUES                                                        *subtitles-issues*
+
+Any issues and suggestions are very welcome on the github bugtracker:
+https://github.com/AndrewRadev/subtitles.vim/issues
+
+
+vim:tw=78:sw=4:ft=help:norl:
