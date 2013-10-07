@@ -18,6 +18,7 @@ let s:time_pattern = '\v(\d\d):(\d\d):(\d\d),(\d\d\d) --\> (\d\d):(\d\d):(\d\d),
 augroup subtitles
   autocmd!
   autocmd CursorMoved <buffer> call s:UpdateTime()
+  autocmd BufWrite <buffer> call b:player.LoadSubtitles(expand('%'))
 augroup END
 
 command! -buffer -nargs=1 Shift call s:Shift(<f-args>)
@@ -68,9 +69,8 @@ function! s:UpdateTime()
   let b:current_time_string = time_line
   let [b:current_time, _]   = s:Times(time_line)
 
-  if exists('b:player')
-    call b:player.Seek(b:current_time)
-  endif
+  call b:player.Seek(b:current_time)
+  call b:player.LoadSubtitles(expand('%'))
 endfunction
 
 function! s:Times(time_string)

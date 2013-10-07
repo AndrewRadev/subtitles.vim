@@ -38,5 +38,6 @@ function! subtitles#mplayer#Command(command) dict
 endfunction
 
 function! subtitles#mplayer#LoadSubtitles(filename) dict
-  call self.Command('sub_load '.a:filename)
+  call self.Command('sub_remove')
+  call self.Command('sub_load '.fnameescape(a:filename))
 endfunction
