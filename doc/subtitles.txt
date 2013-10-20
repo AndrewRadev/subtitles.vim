@@ -25,25 +25,26 @@ The command is (provided you're in ~/.vim):
 <
 
 Another way is to simply copy all the essential directories inside the ~/.vim
-directory: TODO list of directories
+directory: autoload, doc, ftdetect, ftplugin.
 
 
 ==============================================================================
 USAGE                                                          *subtitles-usage*
 
-TODO
+Open a subtitle file ending in `srt` or `sub` in the "Timed Text" format
+(http://en.wikipedia.org/wiki/Timed_Text). Execute the `:Play` command with
+the name of a video file.
 
+Example:
+>
+    :edit ClayShirky_2012G-light.srt
+    :Play ClayShirky_2012G-light.mp4
+<
+Theoretically, jumping around in the file would now skip to the relevant part
+in the video.
 
-==============================================================================
-SETTINGS                                                    *subtitles-settings*
-
-TODO
-
-
-==============================================================================
-INTERNALS                                                  *subtitles-internals*
-
-TODO
+Requires the `mplayer` executable. This would probably only work on Linux and
+Mac OSX.
 
 ==============================================================================
 ISSUES                                                        *subtitles-issues*

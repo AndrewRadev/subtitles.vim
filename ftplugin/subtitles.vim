@@ -1,6 +1,6 @@
 let b:player = subtitles#mplayer#New()
 
-command! -nargs=1 -complete=file Play call s:Play(<f-args>)
+command! -buffer -nargs=1 -complete=file Play call s:Play(<f-args>)
 function! s:Play(video)
   call b:player.Start(a:video)
   call b:player.LoadSubtitles(expand('%'))
