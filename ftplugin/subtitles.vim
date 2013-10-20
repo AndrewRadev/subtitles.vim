@@ -1,7 +1,5 @@
 let b:player = subtitles#mplayer#New()
 
-" TODO (2013-04-22) Reload subtitles in mplayer
-
 command! -nargs=1 -complete=file Play call s:Play(<f-args>)
 function! s:Play(video)
   call b:player.Start(a:video)

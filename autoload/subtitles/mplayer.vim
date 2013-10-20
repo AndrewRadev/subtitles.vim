@@ -14,7 +14,11 @@ endfunction
 
 function! subtitles#mplayer#Start(video_file) dict
   call system('mkfifo '.self.pipe)
-  call system('mplayer '.shellescape(a:video_file).' -slave -input file='.self.pipe.' &')
+  let cmd_output = system('mplayer '.shellescape(a:video_file).' -slave -input file='.self.pipe.' &')
+
+  if v:shell_error
+    echoerr cmd_output
+  end
 
   let self.started = 1
 endfunction
@@ -34,10 +38,9 @@ function! subtitles#mplayer#Stop() dict
 endfunction
 
 function! subtitles#mplayer#Command(command) dict
-  return system('echo '.shellescape(a:command).' > '.self.pipe)
+  return system('echo '.shellescape(a:command).' >> '.self.pipe)
 endfunction
 
 function! subtitles#mplayer#LoadSubtitles(filename) dict
-  call self.Command('sub_remove')
   call self.Command('sub_load '.fnameescape(a:filename))
 endfunction
